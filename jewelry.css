@@ -1,0 +1,405 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Бяло за фон на тялото */
+    color: #333; /* Тъмно сив (почти черен) текст */
+}
+
+header {
+    background-color: #2b2a2a; /* Златисто за хедъра */
+    color:#ffd862;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333; /* Черна линия в долната част на хедъра */
+}
+
+    header .search-bar {
+        display: flex;
+        gap: 10px;
+    }
+
+        header .search-bar input {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #333; /* Черна рамка около търсачката */
+        }
+
+        header .search-bar button {
+            padding: 5px 10px;
+            background-color: #464646; /* Златисто за бутоните */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+            header .search-bar button:hover {
+                background-color: #5f5e5e; /* Малко по-тъмно златисто при hover */
+            }
+
+nav {
+    margin-top: 10px;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+        margin: 0;
+    }
+
+        nav ul li {
+            position: relative;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: white; 
+                padding: 10px 15px;
+                display: block;
+            }
+
+                nav ul li a:hover {
+                    background-color: #5f5e5e;
+                    color: white;
+                }
+
+            nav ul li .dropdown-menu {
+                display: none;
+                position: absolute;
+                background-color: #464646; /* Златисто за падащото меню */
+                list-style: none;
+                padding: 10px 0;
+                margin: 0;
+                top: 40px;
+                left: 0;
+            }
+
+            nav ul li:hover .dropdown-menu {
+                display: inline-block;
+            }
+
+            nav ul li .dropdown-menu li {
+                padding: 0;
+            }
+
+                nav ul li .dropdown-menu li a {
+                    padding: 10px 20px;
+                    white-space: nowrap;
+                }
+
+/* Съдържание */
+main {
+    padding: 20px;
+}
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Слайдове */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: slideAnimation 12s infinite;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(90%)
+    }
+
+    /* Анимация с nth-child */
+    .slide:nth-child(1) {
+        animation-delay: 0s;
+        opacity: 1;
+    }
+
+    .slide:nth-child(2) {
+        animation-delay: 4s;
+    }
+
+    .slide:nth-child(3) {
+        animation-delay: 8s;
+    }
+
+@keyframes slideAnimation {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    10%, 30% {
+        opacity: 1;
+    }
+
+    33%, 66% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+}
+.nav-conteiner {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background-color: white;
+    width: 100%;
+    box-shadow: 10px 5px 10px #cdcdcd;
+}
+
+.content-scroll {
+    position: relative;
+    top: 170px;
+}
+.gallery-item {
+    width: 30%; /* Приспадаме разстоянието за разпределяне на колоните */
+    max-width: 300px; /* Максимален размер на снимките */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    /* Снимките в галерията */
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* Увеличение на снимката при ховър */
+    .gallery-item:hover img {
+        transform: scale(1.5); /* Леко увеличение на снимката */
+    }
+.gallery {
+    display: flex; /* Използваме Flexbox */
+    justify-content: space-evenly; /* Центриране на галерията */
+    gap: 15px; /* Разстояние между елементите */
+    padding: 20px;
+}
+.gallery-conteiner h2 {
+    text-align: center;
+    color: #464646;
+}
+.title {
+    text-align: center;
+    color: #464646;
+    font-size:18px;
+}
+.bottom-menu {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+}
+.bottom-menu ul li {
+    text-decoration: none;
+}
+.four-jewelry {
+      display: flex;
+      justify-content: space-evenly;
+}
+.item1 p {
+    color:#464646;
+
+}
+.item1 {
+    text-align: center;
+    box-shadow: 10px 5px 10px #cdcdcd;
+    margin-top: 3%;
+}
+.item1 img {
+    transition: transform 0.5s ease;
+}
+
+    .item1:hover img {
+        transform: scale(1.1);
+    }
+
+.bottom-menu {
+    list-style-type: none;
+}
+.products {
+    display:flex;
+    justify-content: space-evenly
+}
+
+.sale-icon {
+    position: absolute;
+    margin-left: 294px;
+}
+
+.product {
+    text-align: center;
+    box-shadow: 10px 5px 10px #cdcdcd;
+    margin-top: 3%;
+}
+.half-line {
+    margin-right: 50%;
+}
+.contact-main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Бял фон */
+    color: #333; /* Черен текст */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Засенчване */
+}
+
+    /* Заглавия */
+    .contact-main h2, main h3 {
+        text-align: center;
+        color: #333; /* Черен текст */
+        margin-bottom: 20px;
+        border-bottom: 2px solid #ffd966; /* Златна долна линия */
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .contact-main h2 {
+        font-size: 28px;
+    }
+
+    .contact-main h3 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+/* Секция с контактна информация */
+.contact-info {
+    margin-bottom: 30px;
+    line-height: 1.8;
+
+}
+
+    .contact-info p {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    .contact-info strong {
+        color: #f4b41a; /* Златен акцент */
+    }
+
+/* Формуляр */
+.contact-form {
+    margin-top: 20px;
+}
+
+    .contact-form label {
+        font-size: 16px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        color: #333; /* Черен текст */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd; /* Сива рамка */
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #fff;
+    }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #ffd966; /* Златна рамка при фокус */
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 217, 102, 0.5);
+        }
+
+    /* Бутон за изпращане */
+    .contact-form button {
+        background-color: #f4b41a; /* Златен фон за бутона */
+        color: #fff; /* Бял текст */
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .contact-form button:hover {
+            background-color: #e0a800; /* По-тъмно златисто при hover */
+        }
+.description {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+    .description h2 {
+        background-color:#f9f07b;
+        height: 9%;
+        text-align: center;
+    }
+.des1 img {
+
+    display: block;
+    transition: transform 0.8s ease;
+}
+.des1:hover img {
+    transform: scale(1.3); /* Леко увеличение на снимката */
+}
+.reason {
+    display: flex;
+    justify-content: space-evenly;
+}
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #d4af37; /* Добавена рамка около цялата таблица */
+}
+
+th, td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 2px solid #d4af37; /* Рамка около всяка клетка */
+}
+
+th {
+    background-color: #d4af37;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f0e6d6;
+}
